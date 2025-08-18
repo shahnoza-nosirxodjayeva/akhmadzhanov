@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+.h1-royale {
+  font-family: 'Royale Brone', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.prata {
+  font-family: "Prata", serif;
+}
+
+/* Header design starts */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.8s ease forwards;
+}
+
+/* Header design Ends */
+
+/* HeroSlide design Starts */
+.hero-slider {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 20;
+}
+
+.slide.zoomIn {
+  animation: zoomIn 10s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+.slide.zoomOut {
+  animation: zoomOut 10s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* HeroSlide design Ends */
+
+
+/* Portfolio design Starts */
+.yarl__container:not(:fullscreen),
+.yarl__root:not(:fullscreen),
+.yarl__slides:not(:fullscreen),
+.yarl__slide:not(:fullscreen) {
+  background-color: rgba(74, 74, 74, 0.195) !important;
+  backdrop-filter: blur(2px);
+}
+
+:fullscreen .yarl__container,
+:fullscreen .yarl__root,
+:fullscreen .yarl__slides,
+:fullscreen .yarl__slide {
+  background-color: #ffff !important;
+  backdrop-filter: none;
+}
+
+ .yarl__button {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+:fullscreen .yarl__button {
+  color: rgb(136, 136, 136) !important;
+  fill: rgb(136, 136, 136) !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Portfolio design ends */
+
