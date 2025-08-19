@@ -1,22 +1,26 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { portfolioData } from "@/data/portfolioData";
-import PortfolioDetailClient from "../../../components/portfolio/PortfolioDetailClient";
+import PortfolioDetailClient from "@/components/portfolio/PortfolioDetailClient";
 
-type Props = { params: { id: string } };
+type Params = { id: string };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = portfolioData.find(p => p.id === Number(params.id));
-  if (!project) return { title: "Страница не найдена – Адам" };
-
-  return {
-    title: `${project.title} | Portfolio`,
-    description:  "Портфолио проекта",
-  };
+export async function generateStaticParams(): Promise<Params[]> {
+  return portfolioData.map((p) => ({ id: String(p.id) }));
 }
 
-export default function Page({ params }: Props) {
-  const project = portfolioData.find(p => p.id === Number(params.id));
-  if (!project) return notFound();
-  return <PortfolioDetailClient project={project} />;
+export async function generateMetadata({ params }: { params: Promise<Params> }) {
+  const { id } = await params;
+  const item = portfolioData.find((p) => String(p.id) === id);
+  return {
+    title: item ? `${item.title} – Portfolio` : "Portfolio item",
+    description:  "Portfolio item",
+  };
+}
+export default async function Page({ params }: { params: Promise<Params> }) {
+  const { id } = await params;
+
+  const item = portfolioData.find((p) => String(p.id) === id);
+  if (!item) return notFound();
+
+  return <PortfolioDetailClient project={item} />;
 }
