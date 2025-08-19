@@ -33,6 +33,12 @@ export default function Header() {
     return () => clearTimeout(timer);
   }, [pathname]);
 
+  useEffect(() => {
+    if (showLinks) {
+      setShowLinks(false);
+    }
+  }, [pathname]);
+
   const isHome = pathname === "/";
   const headerClass = isHome
     ? scrolled || showLinks

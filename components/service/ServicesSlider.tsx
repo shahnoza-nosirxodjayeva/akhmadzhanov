@@ -5,17 +5,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   "/images/project-3/1.jpg",
-  "/images/project-2/1.jpg",
-  "/images/project-3/4.jpg",
-  "/images/project-1/1.jpg",
-  "/images/project-2/4.jpg",
   "/images/project-3/2.jpg",
-  "/images/project-3/1.jpg",
-  "/images/project-2/1.jpg",
   "/images/project-3/4.jpg",
-  "/images/project-1/1.jpg",
-  "/images/project-2/4.jpg",
-  "/images/project-3/2.jpg",
+  "/images/project-3/3.jpg",
 ];
 
 export default function ServicesSlider() {
@@ -34,7 +26,7 @@ export default function ServicesSlider() {
     setTimeout(() => {
       setCurrent((prev) => (prev + 1) % images.length);
       setFade(true);
-    }, 300);
+    }, 800);
   };
 
   const prevSlide = () => {
@@ -42,12 +34,12 @@ export default function ServicesSlider() {
     setTimeout(() => {
       setCurrent((prev) => (prev - 1 + images.length) % images.length);
       setFade(true);
-    }, 300);
+    }, 1000);
   };
 
   return (
-    <div data-aos="fade-up" className="relative  w-full max-w-6xl m-auto py-12 px-4">
-      <div className="text-center mb-12">
+    <div className="relative  w-full max-w-6xl m-auto py-12 px-4">
+      <div data-aos="fade-up" className="text-center mb-12">
         <h2 className="text-4xl md:text-6xl prata text-gray-800 mb-2">
           Услуги и цены
         </h2>
@@ -57,7 +49,7 @@ export default function ServicesSlider() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-8 items-center">
-        <div className="md:col-span-1 mb-8">
+        <div data-aos="fade-up" className="md:col-span-1 mb-8">
           <h2 className="text-4xl md:text-5xl prata text-gray-800 mb-8">
             Художественная визуализация
           </h2>
@@ -81,14 +73,13 @@ export default function ServicesSlider() {
         </div>
 
         <div className="md:col-span-2 w-full">
-          <div className="w-full sm:h-[650px] lg:h-[860px]  overflow-hidden shadow-md relative">
+          <div className="w-full h-[400px] sm:h-[650px] lg:h-[860px] overflow-hidden shadow-md relative">
             <img
               key={current}
               src={images[current]}
               alt={`Slide ${current + 1}`}
-              className={`w-full h-full object-cover transition-opacity duration-700 ${
-                fade ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out
+                ${fade ? "opacity-100 scale-100" : "opacity-0 scale-105"}`}
             />
           </div>
 

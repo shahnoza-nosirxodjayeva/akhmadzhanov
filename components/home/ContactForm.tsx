@@ -108,7 +108,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={!accepted}
-            className={`mt-4 w-34 py-3 text-white rounded-full transition-colors  ${
+            className={`mt-4 w-34 py-3 text-white text-md  rounded-full transition-colors  ${
               accepted ? "bg-black hover:bg-gray-800" : "bg-gray-400 cursor-not-allowed"
             }`}
           >

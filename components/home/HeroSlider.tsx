@@ -36,7 +36,7 @@ export default function HeroSlider() {
       })}
       <div className="flex justify-center items-center w-[100vw] h-[100vh]">
         <h1 data-aos="fade-up" data-aos-anchor-placement="center-center" 
-        className="royale z-50 h1-royale text-6xl md:text-7xl lg:text-8xl text-white mb-[6rem]">AKHMADZHANOV</h1>
+        className="royale z-50 h1-royale text-5xl md:text-7xl lg:text-8xl text-white mb-[6rem]">AKHMADZHANOV</h1>
       </div>
     </div>
   );
