@@ -21,34 +21,46 @@ export default function PortfolioDetailClient({ project }: { project: Project })
 
   useEffect(() => {
     const loadImages = async () => {
-      const loaded = await Promise.all(
+      const loaded: { src: string; width: number; height: number }[] = [];
+  
+      await Promise.all(
         project.images.map(
           (src) =>
-            new Promise<{ src: string; width: number; height: number }>((resolve) => {
+            new Promise<void>((resolve) => {
               const img = new Image();
               img.src = src;
-              img.onload = () => resolve({ src, width: img.width, height: img.height });
+              img.onload = () => {
+                loaded.push({ src, width: img.width, height: img.height });
+                resolve();
+              };
             })
         )
       );
-      setPhotos(loaded);
+  
+      setPhotos(loaded); 
     };
+  
     loadImages();
   }, [project.images]);
+  
+  
+  
 
   return (
     <>
       <Logo />
-      <div className="container max-w-7xl mx-auto mt-[70px]">
+      <div data-aos="fade-up" className="container  max-w-7xl mx-auto mt-[70px]">
         {photos.length > 0 && (
           <PhotoAlbum
-            layout="masonry"
+            layout="rows"
             photos={photos}
             spacing={4}
-            columns={(w) => (w < 900 ? 2 : 3)}
+            targetRowHeight={300} // har qatordagi balandlik
+            rowConstraints={{ minPhotos: 2, maxPhotos: 3 }} // har qatorda 2–3 ta rasm
             onClick={({ index }) => setIndex(index)}
           />
         )}
+
         <Lightbox
           open={index >= 0}
           index={index}

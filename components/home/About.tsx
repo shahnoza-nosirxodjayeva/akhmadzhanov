@@ -29,7 +29,7 @@ export default function About() {
   return (
     <section className="py-[120px] px-4 md:px-0">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-0">
-        <div data-aos="fade-up" className="hidden xl:block relative overflow-hidden w-full xl:w-[450px] xl:h-[650px] rounded-br-[240px]">
+        <div data-aos="fade-up" className="hidden xl:block relative overflow-hidden w-full xl:w-[750px] xl:h-[1200px] rounded-br-[340px]">
           {leftImages.map((src, index) => (
             <img
               key={index}
@@ -43,13 +43,13 @@ export default function About() {
         </div>
 
         <div data-aos="fade-up" className=" mx-8 flex-1 max-w-full lg:max-w-[500px] text-left">
-          <h4 className="text-lg sm:text-xl md:text-2xl">
+          <h4 className="text-lg sm:text-xl md:text-4xl">
             Аҳмаджанов Адҳам
           </h4>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-medium my-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-medium my-4">
             Обо мне
           </h2>
-          <p className="text-base lg:text-md mt-6">
+          <p className="text-base lg:text-2xl mt-6">
             Меня зовут Адҳам. Я — визуализатор с архитектурным образованием.
             После окончания университета понял, что моя сила — в создании
             реалистичных и продуманных визуализаций. Архитектура
@@ -59,7 +59,7 @@ export default function About() {
           </p>
         </div>
 
-        <div data-aos="fade-up" className="relative overflow-hidden w-full lg:w-[450px] lg:h-[650px] rounded-tl-[240px]">
+        <div data-aos="fade-up" className="relative overflow-hidden w-full lg:w-[750px] lg:h-[1200px] rounded-tl-[340px]">
           {rightImages.map((src, index) => (
             <img
               key={index}

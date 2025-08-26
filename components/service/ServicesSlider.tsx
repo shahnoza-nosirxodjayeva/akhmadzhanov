@@ -38,8 +38,8 @@ export default function ServicesSlider() {
   };
 
   return (
-    <div className="relative  w-full max-w-6xl m-auto py-12 px-4">
-      <div data-aos="fade-up" className="text-center mb-12">
+    <div data-aos="fade-up" className="relative  w-full max-w-6xl m-auto py-12 px-4">
+      <div className="text-center mb-12">
         <h2 className="text-4xl md:text-6xl prata text-gray-800 mb-2">
           Услуги и цены
         </h2>
@@ -49,7 +49,7 @@ export default function ServicesSlider() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-8 items-center">
-        <div data-aos="fade-up" className="md:col-span-1 mb-8">
+        <div  className="md:col-span-1 mb-8">
           <h2 className="text-4xl md:text-5xl prata text-gray-800 mb-8">
             Художественная визуализация
           </h2>
