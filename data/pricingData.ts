@@ -18,7 +18,7 @@ export interface PricingPlan {
         "Рекомендации по улучшению работы",
       ],
       price: "7 000 ₽",
-      image: "/images/project-3/3.jpg",
+      image: "/images/project-3/3.webp",
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ export interface PricingPlan {
         "Видеоконференция с объяснением действий",
       ],
       price: "16 000 ₽",
-      image: "/images/project-3/1.jpg",
+      image: "/images/project-3/1.webp",
     },
     {
       id: 3,
@@ -43,7 +43,7 @@ export interface PricingPlan {
         "Видеоконференция с разбором ошибок",
       ],
       price: "30 000 ₽",
-      image: "/images/project-3/2.jpg",
+      image: "/images/project-3/2.webp",
     },
   ];
   

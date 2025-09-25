@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "/images/project-3/1.jpg",
-  "/images/project-3/2.jpg",
-  "/images/project-3/4.jpg",
-  "/images/project-3/3.jpg",
+  "/images/project-3/1.webp",
+  "/images/project-3/2.webp",
+  "/images/project-3/4.webp",
+  "/images/project-3/3.webp",
 ];
 
 export default function ServicesSlider() {

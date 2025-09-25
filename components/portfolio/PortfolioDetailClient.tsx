@@ -42,9 +42,6 @@ export default function PortfolioDetailClient({ project }: { project: Project })
   
     loadImages();
   }, [project.images]);
-  
-  
-  
 
   return (
     <>
@@ -55,8 +52,8 @@ export default function PortfolioDetailClient({ project }: { project: Project })
             layout="rows"
             photos={photos}
             spacing={4}
-            targetRowHeight={300} // har qatordagi balandlik
-            rowConstraints={{ minPhotos: 2, maxPhotos: 3 }} // har qatorda 2–3 ta rasm
+            targetRowHeight={300} 
+            rowConstraints={{ minPhotos: 2, maxPhotos: 3 }} 
             onClick={({ index }) => setIndex(index)}
           />
         )}

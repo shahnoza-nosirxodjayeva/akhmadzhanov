@@ -21,7 +21,7 @@ export default function ContactForm() {
 
   return (
     <section className="py-16 px-4 md:px-16 text-gray-700">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8">
         <div  className="ml-6 lg:ml-0 mb-6 flex-1 space-y-4">
           <h2 className="font-sans text-4xl prata mb-6">Мои контакты</h2>
           <p>+998930014820</p>

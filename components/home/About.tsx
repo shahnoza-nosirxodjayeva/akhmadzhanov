@@ -1,89 +1,35 @@
 "use client";
-import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function About() {
-  const leftImages = [
-    "/images/project-2/1.jpg",
-    "/images/project-2/2.jpg",
-    "/images/project-2/3.jpg",
-  ];
-
-  const rightImages = [
-    "/images/project-2/4.jpg",
-    "/images/project-2/5.jpg",
-    "/images/project-2/6.jpg",
-  ];
-
-  const [leftIndex, setLeftIndex] = useState(0);
-  const [rightIndex, setRightIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLeftIndex((prev) => (prev + 1) % leftImages.length);
-      setRightIndex((prev) => (prev + 1) % rightImages.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="py-[120px] px-4 md:px-0">
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-0">
-        <div data-aos="fade-up" className="hidden xl:block relative overflow-hidden w-full xl:w-[750px] xl:h-[1200px] rounded-br-[340px]">
-          {leftImages.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`Left image ${index}`}
-              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                index === leftIndex ? "opacity-100" : "opacity-0"
-              }`}
+    <section className="py-[10rem] px-6 md:px-12 lg:px-20 bg-white">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="flex justify-center md:justify-start">
+          <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/5]">
+            <Image
+              src="/images/about/me.jpg"
+              alt="About me"
+              fill
+              className="object-cover rounded-lg shadow-lg"
             />
-          ))}
+          </div>
         </div>
 
-        <div data-aos="fade-up" className=" mx-8 flex-1 max-w-full lg:max-w-[500px] text-left">
-          <h4 className="text-lg sm:text-xl md:text-4xl">
-            Аҳмаджанов Адҳам
-          </h4>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-medium my-4">
+        <div className="space-y-6">
+          <h2 className="text-4xl text-gray-800">
+            Аҳмаджанов Адҳам
+          </h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium my-4">
             Обо мне
           </h2>
-          <p className="text-base lg:text-2xl mt-6">
+          <p className="text-gray-600 text-lg my-12 leading-relaxed">
             Меня зовут Адҳам. Я — визуализатор с архитектурным образованием.
             После окончания университета понял, что моя сила — в создании
-            реалистичных и продуманных визуализаций. Архитектура
-            <br />
-             дала мне
+            реалистичных и продуманных визуализаций. Архитектура <br /> дала мне
             основу, композиция структуру, а практический подход чёткий метод.
           </p>
         </div>
-
-        <div data-aos="fade-up" className="relative overflow-hidden w-full lg:w-[750px] lg:h-[1200px] rounded-tl-[340px]">
-          {rightImages.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`Right image ${index}`}
-              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                index === rightIndex ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div data-aos="fade-up" className="lg:hidden mt-8 relative w-full h-[400px] sm:h-[500px] overflow-hidden">
-        {rightImages.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Right image ${index}`}
-            className={`absolute top-0 left-0 w-full h-full object-cover rounded-none transition-opacity duration-1000 ${
-              index === rightIndex ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
       </div>
     </section>
   );
